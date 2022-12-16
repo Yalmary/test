@@ -426,7 +426,8 @@ body {
         margin-right: auto;
     }
 
-    &__gradient{
+    &__gradient {
+        display: none; 
         position: absolute;
         height: 65px;
         width: 65px;
@@ -437,17 +438,23 @@ body {
     }
 }
 
-.card__move {
+.card__move:hover{
     transform: translateY(-20px);
     border-radius: 15px;
     background: linear-gradient(#28303699,#28303699) padding-box,
                 linear-gradient(to right, #FFFFFF14, #FFFFFF00, #FFFFFF14, #FFFFFF00) border-box;
     border: 2px solid transparent;
+
+    
     
     .card__button{
         background-color: #FF6E30;
         color: #FFFFFF;
     }
+}
+
+.card__move:hover .card__gradient{
+    display: block;
 }
 
 /* section tools */
