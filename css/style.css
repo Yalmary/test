@@ -347,6 +347,7 @@ body {
   border-radius: 15px;
   background: linear-gradient(rgba(40, 48, 54, 0.6), rgba(40, 48, 54, 0.6)) padding-box, linear-gradient(to right, rgba(255, 255, 255, 0.0784313725), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.0784313725), rgba(255, 255, 255, 0)) border-box;
   border: 2px solid transparent;
+  transition: 0.5s;
 }
 .card__move:hover .card__button {
   background-color: #FF6E30;
