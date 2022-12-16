@@ -42,6 +42,34 @@ table {
 	border-spacing: 0;
 }
 
+/* roboto-regular - latin */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/roboto-v30-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('../fonts/roboto-v30-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/roboto-v30-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/roboto-v30-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/roboto-v30-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/roboto-v30-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
+  }
+
+/* lora-500 - latin */
+@font-face {
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/lora-v26-latin-500.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('../fonts/lora-v26-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/lora-v26-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/lora-v26-latin-500.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/lora-v26-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/lora-v26-latin-500.svg#Lora') format('svg'); /* Legacy iOS */
+  }
+
 /* poppins-regular - latin */
 @font-face {
   font-family: 'Poppins';
@@ -83,6 +111,10 @@ table {
 }
 
 /* default */
+
+$Roboto: normal 400 14px/30px Roboto;
+
+$Lora: normal 500 250px/320px Lora;
 
 $font400: normal 400 22px/33px Poppins;
 
@@ -168,7 +200,7 @@ body {
 
     &__title {
         margin-right: auto;
-    }
+    } 
 
     &__text {
         font: $font500;
@@ -292,7 +324,7 @@ body {
             grid-template-rows: 1fr 1fr;
             grid-row-gap: 100px;
             grid-column-gap: 25px;
-            
+            margin-bottom: 100px;
 		}
 
 		&__card {
@@ -314,11 +346,13 @@ body {
 
 
 .tools {
+    margin-bottom: 200px;
 
     &__card {
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
+        padding: 38px 33px 33px 33px;
 
     }
 }
@@ -378,7 +412,7 @@ body {
         border: none;
         width: 106px;
         height: 42px;
-        padding-right: 33px;
+        
     }
     
     &__heart {
@@ -397,23 +431,292 @@ body {
         height: 65px;
         width: 65px;
         background-image: radial-gradient(rgba(255, 110, 48, 0.6) 60%, transparent 50%);
-        top: 0;
-        right: 5px;
+        top: -25px;
+        right: -25px;
         filter: blur(25px);
     }
 }
 
 .card__move {
-    border: 2px solid;
-    border-image-slice: 1;
-    border-width: 5px;
-    border-image-source: linear-gradient(to left, #FFFFFF14, #FFFFFF00, #FFFFFF0D, #FFFFFF00);
-    border-radius: 15px;
     transform: translateY(-20px);
+    border-radius: 15px;
+    background: linear-gradient(#28303699,#28303699) padding-box,
+                linear-gradient(to right, #FFFFFF14, #FFFFFF00, #FFFFFF14, #FFFFFF00) border-box;
+    border: 2px solid transparent;
+    
+    .card__button{
+        background-color: #FF6E30;
+        color: #FFFFFF;
+    }
 }
-
 
 /* section tools */
 
+/* section brands */
+
+.brands {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border-radius: 15px;
+    background: linear-gradient(#28303699,#28303699) padding-box,
+                linear-gradient(to right, #FFFFFF14, #FFFFFF00, #FFFFFF14, #FFFFFF00) border-box;
+    border: 2px solid transparent;
+    margin: 0 108px 220px 108px;
+    overflow: hidden;
+
+
+    &__description {
+        font: $font500;
+        font-size: 24px;
+        line-height: 36px;
+        color: #FFFFFFCC;
+        margin-bottom: 60px;
+        padding-top: 55px;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__company {
+        margin-right: 107px;
+        padding-bottom: 56px;
+    }
+
+    &__gradient{
+        position: absolute;
+        height: 65px;
+        width: 65px;
+        background-image: radial-gradient(rgba(255, 72, 66, 0.4) ,transparent 800%);
+        top: 0;
+        left: -5px;
+        filter: blur(25px);
+    }
+}
+
+
+
+/* section brands */
+
+/* section new */
+
+
+.new {
+    margin: auto 108px 100px 108px;
+    display: flex;
+    flex-wrap: no-wrap;
+
+		&__discription {
+            margin-right: 197px;
+            
+		}
+
+		&__title {
+            margin-bottom: 30px;
+		}
+
+		&__info {
+            margin-bottom: 60px;
+            width: 427px;
+		}
+
+		&__button {
+            width: 198px;
+            height: 58px;
+            font: $font500;
+            font-size: 18px;
+            line-height: 27px;
+		}
+
+		&__cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+		}
+
+        &__card{
+            margin-right: 24px;
+            margin-bottom: 50px;
+            color: #FFFFFF8C;
+            padding: 28px 21px;
+            width: 288px;
+            height: auto;
+        }
+}
+
+/* section new */
+
+/* section slider */
+.arrow {
+    width: 80px;
+    height: 100px;
+}
+
+.slider {
+    margin: 0 108px 250px 108px;
+
+    &__content {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 100px;
+    }
+
+    &__text {
+        position: relative;
+    }
+
+    &__background {
+        font: $Lora;
+        content: " “ ";
+        position: absolute;
+        transform: rotate(15.17deg);
+        top: -100px;
+        left: -80px;
+        z-index: -1000;
+        background-image: linear-gradient(188.88deg, rgba(252, 252, 252, 0) 20.34%, rgba(255, 255, 255, 0.5) 155.72%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+    }
+   
+    &__discription {
+        font: $Roboto;
+        max-width: 393px;
+        z-index: 1;
+    }
+
+    &__bar {
+        display: flex;
+        align-self: center;
+        justify-content: center;
+    }
+
+    &__line {
+        margin-right: 18px;
+    }
+}
+
+
+/* section slider */
+
+/* section user */
+
+.user {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 240px;
+
+    &__title {
+        margin-bottom: 25px;
+    }
+
+    &__description {
+        margin-bottom: 100px;
+        max-width: 427px;
+        text-align: center;
+    }
+
+    &__search {
+        position: relative;
+    }
+    
+    &__input {
+        width: 549px;
+        height: 64px;
+        padding-left: 24px;
+    }
+
+    &__button {
+        position: absolute;
+        width: 130px;
+        height: 48px;
+        right: 12px;
+        top: 8px;
+    }
+}
+
+
+/* section user */
 
 /* main */
+
+/* footer */
+
+
+.footer {
+
+    border-top: 0.5px solid #FFFFFF26;
+    padding-top: 70px;
+
+    &__wrapper {
+        margin: 0 108px 98px 108px;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    &__info{
+        max-width: 260px;
+        margin-right: auto;
+    }
+
+    &__info-logo {
+        display:flex;
+        flex-wrap: nowrap;
+        margin-bottom: 25px;
+    }
+
+    &__logo {
+        margin-right: 12px;
+    }
+  
+    &__copy {
+        margin-bottom: 21px;
+        font: $font500;
+        color: #FFFFFFE5;
+    }
+
+    &__description {
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+    &__nav{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    &__menu {
+        margin-right: 115px;
+    }
+
+    &__menu:last-child {
+        margin-right: 0;
+    }
+
+    &__menu-title {
+        font:$font500;
+        font-weight: 20px;
+        line-height: 30px;
+        color: #FFFFFFE5;
+        margin-bottom: 20px;
+    }
+
+    &__menu-item{
+        margin-bottom: 10px;
+    }
+
+    &__menu-link {
+        text-decoration: none;
+        font: $font500;
+        color: #FFFFFF8C;
+    }
+}
+
+/* footer */
